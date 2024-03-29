@@ -38,6 +38,16 @@
       "component": "homeWidgetDashboard",
       "online": true,
       "offline": true
+    },
+    {
+      "name": "report-widget-link",
+      "slot": "homepage-dashboard-slot",
+      "component": "reportWidgetLink",
+      "meta": {
+        "name": "Reports",
+        "slot": "report-dashboard-slot",
+        "title": ""
+      }
     }
   ]
 }

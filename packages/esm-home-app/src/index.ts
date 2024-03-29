@@ -1,6 +1,7 @@
 import { registerBreadcrumbs, defineConfigSchema, getAsyncLifecycle, getSyncLifecycle } from '@openmrs/esm-framework';
 import { createDashboardLink } from './createDashboardLink.component';
-import { dashboardMeta } from './dashboard.meta';
+import { createDashboardReportsLink } from './reports/createDashboardReportsLink.component';
+import { dashboardMeta, reportsDashboardMeta } from './dashboard.meta';
 import { esmHomeSchema } from './openmrs-esm-home-schema';
 import rootComponent from './root.component';
 import homeNavMenuComponent from './side-menu/side-menu.component';
@@ -21,6 +22,8 @@ export const root = getSyncLifecycle(rootComponent, options);
 export const homeNavMenu = getSyncLifecycle(homeNavMenuComponent, options);
 
 export const homeWidgetDbLink = getSyncLifecycle(createDashboardLink(dashboardMeta), options);
+
+export const reportWidgetLink = getSyncLifecycle(createDashboardReportsLink(reportsDashboardMeta), options);
 
 export const homeWidgetDashboard = getSyncLifecycle(homeWidgetDashboardComponent, options);
 

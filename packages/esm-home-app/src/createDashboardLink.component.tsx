@@ -6,11 +6,12 @@ import { useTranslation } from 'react-i18next';
 export interface DashboardLinkConfig {
   name: string;
   title: string;
+  highlight?: boolean;
 }
 
 const DashboardLink = ({ dashboardLinkConfig }: { dashboardLinkConfig: DashboardLinkConfig }) => {
   const { t } = useTranslation();
-  const { name } = dashboardLinkConfig;
+  const { name, highlight } = dashboardLinkConfig;
   const location = useLocation();
   const spaBasePath = `${window.spaBase}/home`;
 
@@ -23,7 +24,7 @@ const DashboardLink = ({ dashboardLinkConfig }: { dashboardLinkConfig: Dashboard
   return (
     <ConfigurableLink
       to={spaBasePath}
-      className={`cds--side-nav__link ${navLink === 'home' && 'active-left-nav-link'}`}
+      className={`cds--side-nav__link ${navLink === 'home' && highlight && 'active-left-nav-link'}`}
     >
       {/* t('Home', 'Home') */}
       {t(name)}
