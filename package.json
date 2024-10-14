@@ -13,7 +13,7 @@
     "release": "yarn workspaces foreach --all --topological version",
     "prettier": "prettier --config prettier.config.js --write \"packages/**/*.{ts,tsx}\"",
     "postinstall": "husky install",
-    "start": "openmrs develop --sources 'packages/esm-*-app/'",
+    "start": "openmrs develop --backend http://localhost/ --spaPath /wellcare360/spa/ --apiUrl /wellcare360 --sources 'packages/esm-*-app/'",
     "verify": "turbo lint typescript test"
   },
   "devDependencies": {

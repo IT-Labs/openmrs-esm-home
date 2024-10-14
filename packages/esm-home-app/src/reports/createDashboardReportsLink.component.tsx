@@ -22,6 +22,7 @@ function DashboardLink({ dashboardLinkConfig }: { dashboardLinkConfig: Dashboard
 
   return (
     <ConfigurableLink to={spaBasePath} className={className} onClick={() => newWindowRedirect(redirectPath)}>
+      {/* t('Reports', 'Reports') */}
       {t(name)}
     </ConfigurableLink>
   );
